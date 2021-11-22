@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="/">AutoSfat</a>
+        </div>
+    </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          <div>
+            <form method="post" action='#'>
+                <legend>Car features</legend>
+                <fieldset>
+                    <div>
+                        {{form.Make.label()}}
+    
+                        {% if form.Make.errors %}
+                            {{form.Make()}}
+                            <div>
+                                {% for error in form.Make.errors %}
+                                    <span>{{error}}</span>
+                                {%endfor%}
+                            </div>
+                        {% else %}
+                            {{form.Make}}
+                        {% endif %}
+                    </div>
+                    <div>
+                        {{form.Model.label()}}
+    
+                        {%if form.Model.errors%}
+                            {{form.Model}}
+                            <div>
+                                {%for error in form.Model.errors%}
+                                    <span>{{error}}</span>
+                                {%endfor%}
+                            </div>
+                        {%else%}
+                            {{form.Model}}
+                        {%endif%}
+                    </div>
+                    <div>
+                        {{form.Year.label()}}
+    
+                        {%if form.Year.errors%}
+                            {{form.Year}}
+                            <div>
+                                {%for error in form.Year.error%}
+                                    <span>{{error}}</span>
+                                {%endfor%}
+                            </div>
+                        {%else%}
+                            {{form.Year}}
+                        {%endif%}
+                    </div>
+                    <div>
+                        {{form.BodyStyle.label()}}
+    
+                        {%if form.BodyStyle.errors%}
+                            {{form.BodyStyle}}
+                            <div>
+                                {%for error in form.BodyStyle.error%}
+                                    <span>{{error}}</span>
+                                {%endfor%}
+                            </div>
+                        {%else%}
+                            {{form.BodyStyle}}
+                        {%endif%}
+                    </div>
+                    <div>
+                        {{form.Distance.label()}}
+    
+                        {%if form.Distance.errors%}
+                            {{form.Distance}}
+                            <div>
+                                {%for error in form.Distance.error%}
+                                    <span>{{error}}</span>
+                                {%endfor%}
+                            </div>
+                        {%else%}
+                            {{form.Distance(type="number",min = 0,max=2000000, autocomplete="off")}}
+                        {%endif%}
+                    </div>
+                    <div>
+                        {{form.Engine.label()}}
+    
+                        {%if form.Engine.errors%}
+                            {{form.Engine}}
+                            <div>
+                                {%for error in form.Engine.error%}
+                                    <span>{{error}}</span>
+                                {%endfor%}
+                            </div>
+                        {%else%}
+                            {{form.Engine(type="number", min=800, max=8000,  autocomplete="off")}}
+                        {%endif%}
+                    </div>
+                    <div>
+                        {{form.FuelType.label()}}
+    
+                        {%if form.FuelType.errors%}
+                            {{form.FuelType}}
+                            <div>
+                                {%for error in form.FuelType.error%}
+                                    <span>{{error}}</span>
+                                {%endfor%}
+                            </div>
+                        {%else%}
+                            {{form.FuelType}}
+                        {%endif%}
+                    </div>
+                    <div>
+                        {{form.Transmission.label()}}
+    
+                        {%if form.Transmission.errors%}
+                            {{form.Transmission}}
+                            <div>
+                                {%for error in form.Transmission.error%}
+                                    <span>{{error}}</span>
+                                {%endfor%}
+                            </div>
+                        {%else%}
+                            {{form.Transmission}}
+                        {%endif%}
+                    </div>
+                    <div>
+                      {{form.submit()}}
+                    </div>
+                </fieldset>
+            </form>
+        <br>
+        <br>
+        </div>
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

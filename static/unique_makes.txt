@@ -1,0 +1,93 @@
+Toyota
+Renault
+Volkswagen
+Opel
+Mercedes
+BMW
+KIA
+Volvo
+Nissan
+Hyundai
+Audi
+GAZ
+Tesla
+Lincoln
+Lexus
+Dodge
+Porsche
+Mazda
+Dacia
+Peugeot
+Vaz
+Ford
+Seat
+Honda
+Skoda
+Chevrolet
+Subaru
+Citroen
+Fiat
+Jaguar
+Infiniti
+Mitsubishi
+Land Rover
+Suzuki
+Daewoo
+Datsun
+Mini
+Changan
+Rover
+Saab
+Cadillac
+GMC
+Chrysler
+Jeep
+Acura
+Smart
+Isuzu
+Ravon
+Moskvich / Izh
+Chery
+Hummer
+Alfa Romeo
+UAZ
+Lancia
+Zaz
+Daihatsu
+Ssangyong
+Byd
+Alta marca
+LuAZ
+Maserati
+Bentley
+Jac
+Lifan
+Brilliance
+Pontiac
+Great Wall
+Buick
+Groz
+BAIC
+Ferrari
+Lada
+Scion
+Haval
+Abarth
+Haima
+Zotye
+Geely
+Tata
+Faw
+Lamborghini
+McLaren
+Mercedes-Maybach
+Saturn
+Aston Martin
+ARO
+Xpeng
+SMA
+Iveco
+Cupra
+Weltmeister
+Iran Khodro
+DS Automobiles

@@ -1,0 +1,10 @@
+Hatchback
+Universal
+Minivan
+SUV
+Sedan
+Coupe
+Crossover
+Pickup
+Cabriolet
+Roadster
